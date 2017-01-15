@@ -1,0 +1,3 @@
+#+TITLE: bbox - a browser-based drum machine.
+
+*bbox* is a drum machine designed to be run in the browser.
