@@ -18,10 +18,10 @@ be simple, and look a little something like this:
    After installing both *node* and *yarn*, fork this repository (or clone if
    you are a collaborator) and install dependancies via *yarn*.
 
-   ```sh
-   $ yarn install
-   ```
+   #+BEGIN_SRC sh
+   yarn install
+   #+END_SRC
 
 ** Development
 
-   You can run a local server with `yarn run start` and test / watch with `yarn run test`.
+   You can run a local server with ~yarn run start~ and test / watch with ~yarn run test~.
