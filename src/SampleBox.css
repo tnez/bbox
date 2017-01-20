@@ -1,0 +1,10 @@
+.SampleBox {
+  text-align: center;
+  border: 1px solid;
+  width: 8em;
+  height: 8em;
+}
+
+.SampleBox--keylabel {
+  font-size: 4em;
+}
