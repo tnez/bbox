@@ -1,8 +1,13 @@
 .SampleBox {
-  text-align: center;
   border: 1px solid;
-  width: 8em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
   height: 8em;
+  justify-content: center;
+  margin: 2em;
+  text-align: center;
+  width: 8em;
 }
 
 .SampleBox--keylabel {
