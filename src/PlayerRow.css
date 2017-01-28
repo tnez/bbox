@@ -1,0 +1,23 @@
+.PlayerRow {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.PlayerRow--label {
+  margin: 0 0.5em;
+  text-align: right;
+  width: 4em;
+}
+
+.PlayerRow--tiles {
+  align-items: center;
+  display: flex;
+}
+
+.PlayerRow--clear-btn {
+  margin: 0 0.5em;
+  text-align: left;
+  width: 4em;
+}
