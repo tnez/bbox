@@ -1,26 +1,26 @@
 .PlayerTile {
-  background-color: #333;
+  background-color: #444;
   border: 0.1em solid #222;
   height: 3em;
   width: 3em;
 }
 
 .PlayerTile--active {
-  background-color: #999;
+  background-color: steelblue;
   border: 0.1em solid #222;
   height: 3em;
   width: 3em;
 }
 
 .PlayerTile--playing {
-  background-color: khaki;
+  background-color: #666;
   border: 0.1em solid #222;
   height: 3em;
   width: 3em;
 }
 
 .PlayerTile--active-and-playing {
-  background-color: seagreen;
+  background-color: dodgerblue;
   border: 0.1em solid #222;
   height: 3em;
   width: 3em;
