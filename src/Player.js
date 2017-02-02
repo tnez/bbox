@@ -15,7 +15,9 @@ class Player extends Component {
 
   initializeData() {
     this.data = data.map(entry => {
-      entry.notes = new Array(NUM_BEATS * NUM_MEASURES).fill(0)
+      entry.notes = new Array(NUM_BEATS * NUM_MEASURES).fill(false)
+      // TODO: remove this line
+      entry.notes = entry.notes.map(() => Math.random() > 0.5)
       return entry
     })
   }

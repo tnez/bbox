@@ -10,8 +10,8 @@ const PlayerRow = ({
     <div className="PlayerRow">
       <h4 className="PlayerRow--label">{data.label}</h4>
       <div className="PlayerRow--tiles">
-        {data.notes.map((bit, idx) =>
-          <PlayerTile key={idx} active={bit === 1} playing={false} />
+        {data.notes.map((active, idx) =>
+          <PlayerTile key={idx} active={active} playing={idx === 7} />
          )}
       </div>
       <div className="PlayerRow--clear-btn">( x )</div>
