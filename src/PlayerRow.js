@@ -5,13 +5,14 @@ import PlayerTile from './PlayerTile'
 
 const PlayerRow = ({
   data,
+  t,
 }) => {
   return(
     <div className="PlayerRow">
       <h4 className="PlayerRow--label">{data.label}</h4>
       <div className="PlayerRow--tiles">
         {data.notes.map((active, idx) =>
-          <PlayerTile key={idx} active={active} playing={idx === 7} />
+          <PlayerTile key={idx} active={active} playing={t === idx} />
          )}
       </div>
       <div className="PlayerRow--clear-btn">( x )</div>

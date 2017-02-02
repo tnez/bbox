@@ -11,6 +11,11 @@ class Player extends Component {
   constructor(props) {
     super(props)
     this.initializeData()
+    this.state = {
+      playing: true,
+      t: 0,
+    }
+    this.timer = setInterval(this.tick.bind(this), 240)
   }
 
   initializeData() {
@@ -22,10 +27,16 @@ class Player extends Component {
     })
   }
 
+  tick() {
+    if (!this.state.playing) { return }
+    const tNext = (this.state.t + 1) % (NUM_BEATS * NUM_MEASURES)
+    this.setState({t: tNext})
+  }
+
   render() {
     return(
       <div className='Player'>
-        {this.data.map((d, idx) => <PlayerRow key={idx} data={d} />)}
+        {this.data.map((d, idx) => <PlayerRow key={idx} data={d} t={this.state.t}/>)}
         <button className="Player--play-btn">Start | Pause</button>
       </div>
     )
