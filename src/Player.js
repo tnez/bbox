@@ -12,10 +12,9 @@ class Player extends Component {
     super(props)
     this.initializeData()
     this.state = {
-      playing: true,
+      playing: false,
       t: 0,
     }
-    this.timer = setInterval(this.tick.bind(this), 240)
   }
 
   initializeData() {
@@ -28,16 +27,25 @@ class Player extends Component {
   }
 
   tick() {
-    if (!this.state.playing) { return }
     const tNext = (this.state.t + 1) % (NUM_BEATS * NUM_MEASURES)
     this.setState({t: tNext})
+  }
+
+  togglePlaying() {
+    if (this.state.playing) {
+      this.timer && clearInterval(this.timer)
+      this.setState({playing: false})
+    } else {
+      this.timer = setInterval(this.tick.bind(this), 220)
+      this.setState({playing: true})
+    }
   }
 
   render() {
     return(
       <div className='Player'>
         {this.data.map((d, idx) => <PlayerRow key={idx} data={d} t={this.state.t}/>)}
-        <button className="Player--play-btn">Start | Pause</button>
+        <button className="Player--play-btn" onClick={this.togglePlaying.bind(this)}>Start | Pause</button>
       </div>
     )
   }
