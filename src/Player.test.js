@@ -20,6 +20,26 @@ it('should render', () => {
   ReactDOM.render(<Player {...props} />, root)
 })
 
+describe('clearNotes', () => {
+
+  it('clears data for a given row', () => {
+    const { wrapper } = setup()
+    // set first data row to all ones
+    const [firstEntry, ...otherEntries] = wrapper.state().data
+    wrapper.setState({
+      data: [
+        { ...firstEntry, notes: new Array(firstEntry.notes.length).fill(true) },
+        ...otherEntries,
+      ]
+    })
+    expect(wrapper.state().data[0].notes).toEqual(new Array(firstEntry.notes.length).fill(true))
+
+    // clearData for row[0]
+    wrapper.instance().clearData(0)
+    expect(wrapper.state().data[0].notes).toEqual(new Array(firstEntry.notes.length).fill(false))
+  })
+})
+
 describe('tick', () => {
   it('increments state.t by 1', () => {
     const { wrapper } = setup()

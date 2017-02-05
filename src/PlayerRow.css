@@ -17,7 +17,12 @@
 }
 
 .PlayerRow--clear-btn {
+  cursor: pointer;
   margin: 0 0.5em;
   text-align: left;
   width: 4em;
+}
+
+.PlayerRow--clear-btn:hover {
+  color: lightcoral;
 }

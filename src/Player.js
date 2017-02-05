@@ -10,15 +10,23 @@ const NUM_MEASURES = 4
 class Player extends Component {
   constructor(props) {
     super(props)
-    this.initializeData()
     this.state = {
+      data: this.getInitialData(data),
       playing: false,
       t: 0,
     }
   }
 
-  initializeData() {
-    this.data = data.map(entry => {
+  clearData(idx) {
+    this.setState({data: [
+      ...this.state.data.slice(0, idx),
+      { ...this.state.data[idx], notes: this.state.data[idx].notes.fill(false) },
+      ...this.state.data.slice(idx + 1),
+    ]})
+  }
+
+  getInitialData(data) {
+    return data.map(entry => {
       entry.notes = new Array(NUM_BEATS * NUM_MEASURES).fill(false)
       // TODO: remove this line
       entry.notes = entry.notes.map(() => Math.random() > 0.5)
@@ -44,7 +52,9 @@ class Player extends Component {
   render() {
     return(
       <div className='Player'>
-        {this.data.map((d, idx) => <PlayerRow key={idx} data={d} t={this.state.t}/>)}
+        {this.state.data.map((d, idx) =>
+          <PlayerRow key={idx} clearHandler={() => this.clearData(idx)}data={d} t={this.state.t}/>
+         )}
         <button className="Player--play-btn" onClick={this.togglePlaying.bind(this)}>Start | Pause</button>
       </div>
     )

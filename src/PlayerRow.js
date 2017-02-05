@@ -4,6 +4,7 @@ import './PlayerRow.css'
 import PlayerTile from './PlayerTile'
 
 const PlayerRow = ({
+  clearHandler,
   data,
   t,
 }) => {
@@ -15,7 +16,7 @@ const PlayerRow = ({
           <PlayerTile key={idx} active={active} playing={t === idx} />
          )}
       </div>
-      <div className="PlayerRow--clear-btn">( x )</div>
+      <div className="PlayerRow--clear-btn" onClick={clearHandler}>( x )</div>
     </div>
   )
 }
