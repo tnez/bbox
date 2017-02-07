@@ -1,5 +1,6 @@
 export default [
   {
+    audio: new Audio('samples/kick.wav'),
     keylabel: "A",
     label: "Kick",
     notes: [
@@ -22,6 +23,7 @@ export default [
     ],
   },
   {
+    audio: new Audio('samples/snare.wav'),
     keylabel: "S",
     label: "Snare",
     notes: [
@@ -44,6 +46,7 @@ export default [
     ],
   },
   {
+    audio: new Audio('samples/hihat.wav'),
     keylabel: "D",
     label: "Hi-Hat",
     notes: [
@@ -66,6 +69,7 @@ export default [
     ],
   },
   {
+    audio: new Audio('samples/ride.wav'),
     keylabel: "F",
     label: "Ride",
     notes: [

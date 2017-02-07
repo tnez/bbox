@@ -53,9 +53,24 @@ class Player extends Component {
     }
   }
 
+  playAudio(idx) {
+    data[idx].audio.pause()
+    data[idx].audio.currentTime = 0
+    data[idx].audio && data[idx].audio.play()
+  }
+
+  playNotes(t) {
+    this.state.data.forEach((d, idx) => {
+      if (d.notes[t]) {
+         this.playAudio(idx)
+      }
+    })
+  }
+
   tick() {
     const tNext = (this.state.t + 1) % (NUM_BEATS * NUM_MEASURES)
     this.setState({t: tNext})
+    this.playNotes(this.state.t)
   }
 
   togglePlaying() {
@@ -67,6 +82,7 @@ class Player extends Component {
       this.timer = setInterval(this.tick.bind(this), 220)
       document.addEventListener("keydown", this.handleKeyDown.bind(this))
       this.setState({playing: true})
+      this.playNotes(this.state.t)
     }
   }
 
