@@ -38,15 +38,19 @@ class Player extends Component {
     switch (e.key) {
       case 'a':
         this.addNote(0, this.state.t)
+        this.playAudio(0)
         break
       case 's':
         this.addNote(1, this.state.t)
+        this.playAudio(1)
         break
       case 'd':
         this.addNote(2, this.state.t)
+        this.playAudio(2)
         break
       case 'f':
         this.addNote(3, this.state.t)
+        this.playAudio(3)
         break
       default:
         console.log(`Unhandled Keypress: ${e.key}`)
