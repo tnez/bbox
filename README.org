@@ -3,7 +3,7 @@
 *bbox* is a drum machine designed to be run in the browser. Initial build will
 be simple, and look a little something like this:
 
-[[file:wireframes/player-interface-0.1.0.jpg]]
+[[file:wireframes/player-interface-screenshot.png]]
 
 
 * Contributing
